@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 public class CILab implements CILabInterface {
     private String myString;
 
@@ -13,8 +15,13 @@ public class CILab implements CILabInterface {
 
     @Override
     public boolean detectCapitalUse() {
-        String capitalized = myString.toUpperCase();
-        if (myString == capitalized) {
+        // Examine string for totality of uppercase or lowercase characters, then examine for first uppercase character and remaining lowercase substring
+        // Assumed that empty Strings do not return true (no letters present)
+        if (!Pattern.matches("^[a-zA-Z]+$", myString)) {
+            return false;
+        } else if (myString.equals(myString.toUpperCase()) || myString.equals(myString.toLowerCase())) {
+            return true;
+        } else if (Character.isUpperCase(myString.charAt(0)) && myString.substring(1).equals(myString.substring(1).toLowerCase())) {
             return true;
         }
         return false;
