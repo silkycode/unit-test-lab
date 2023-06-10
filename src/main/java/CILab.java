@@ -26,6 +26,5 @@ public class CILab implements CILabInterface {
         }
         return false;
     }
-
 }
 
