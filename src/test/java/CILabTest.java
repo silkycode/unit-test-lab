@@ -19,6 +19,7 @@ public class CILabTest {
     }
 
     // detectCapitalUse() tests use example strings and pass/fail criteria documented in CILabInterface.java
+    // test 1 asserts successful Strings, test 2 asserts failure Strings
     @Test
     public void detectCapitalUseTest1() {
         myString.setString("USA");

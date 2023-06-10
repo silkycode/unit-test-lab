@@ -16,7 +16,7 @@ public class CILab implements CILabInterface {
     @Override
     public boolean detectCapitalUse() {
         // Examine string for totality of uppercase or lowercase characters, then examine for first uppercase character and remaining lowercase substring
-        // Assumed that empty Strings do not return true (no letters present)
+        // Assumed that only Strings containing only letters can be examined for case booleans
         if (!Pattern.matches("^[a-zA-Z]+$", myString)) {
             return false;
         } else if (myString.equals(myString.toUpperCase()) || myString.equals(myString.toLowerCase())) {
