@@ -2,6 +2,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class CILabTest {
@@ -20,18 +21,12 @@ public class CILabTest {
 
     @Test
     public void detectCapitalUseTest1() {
-       fail("Not yet implemented");
-
+        // Using example strings and pass/fail criteria documented in CILabInterface.java
+        myString.setString("USA");
+        assertTrue(myString.detectCapitalUse(), "Should pass");
     }
     @Test
     public void detectCapitalUseTest2() {
         fail("Not yet implemented");
     }
-
-    @Test
-    public void detectCapitalUseTest3() {
-        fail("Not yet implemented");
-    }
-
-
 }
